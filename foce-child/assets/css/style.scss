@@ -1,0 +1,58 @@
+$primary-color: #ff630a;
+
+.title {
+  color: $primary-color;
+
+  span {
+    display: inline-block;
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.story #place {
+  display: flex;
+  background-image: url("./assets/images/place_bg.png");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+
+  &::before {
+    background-image: url("./assets/images/big_cloud.png");
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  &::after {
+    background-image: url("./assets/images/little_cloud.png");
+    right: 110px;
+    top: 20px;
+    width: 150px;
+    height: 150px;
+  }
+}

@@ -1,0 +1,344 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+ h2 {
+  background-color: transparent;
+}
+
+.fade-in{
+  display:none;
+  opacity: 0;
+  animation: fadeInAnimation 1s ease forwards;
+}
+
+.fadeh2 {
+  opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.story__article {
+  margin: auto;
+}
+
+.story__article::after {
+  animation: rotation 10s infinite linear;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.title span {
+  display: inline-block;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.title span:nth-last-of-type(1) {
+  animation-delay: 1s;
+}
+
+.title span:nth-last-of-type(2) {
+  animation-delay: 0.5s;
+}
+
+.title span:nth-last-of-type(3) {
+  animation-delay: 0.75s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.story #place {
+  display: flex;
+  background-image: url("./assets/images/place_bg.png");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.story #place::before,
+.story #place::after {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: moveClouds 5s linear infinite;
+}
+
+.cloud img{
+  --distance:0;
+  filter: blur(12px);
+  position:absolute;
+  transform: translateX(var(--distance));
+  top: 8%;
+  right: 2%;
+}
+
+.bigcloud{}
+
+.littlecloud {
+  margin-right: 30%;
+  margin-top: 16%;
+}
+
+.swiper{
+  max-width: 900px;
+}
+
+.swiper-slide{
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin-bottom: 30px;
+  flex-direction: column;
+}
+
+.swiper-slide img {
+  width: 100%;
+  display: block;
+}
+
+.banner {
+  position: relative;
+  background-image: unset;
+}
+
+.banner video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+#studio h2::before,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after,
+#story h2::after {
+  position: absolute;
+  animation: rotate 10s linear infinite;
+}
+
+#studio h2::before {
+  content: url("./assets/images/random_flower.png");
+  left: -1em;
+  top: 0;
+}
+
+#studio h2::after {
+  content: url("./assets/images/flower.png");
+  right: 1em;
+  top: 1.2em;
+}
+
+.site-footer::before {
+  content: url("./assets/images/Sunflower.png");
+  left: 4em;
+  top: 0em;
+}
+
+.site-footer::after {
+  content: url("./assets/images/orchid.png");
+  right: -4em;
+  bottom: 7.8em;
+}
+
+#story h2::after {
+  content: url("./assets/images/Sunflower.png");
+  left: 0.7em;
+  top: 6em;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*menu*/
+
+.menu-burger-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.menu-burger-container.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.menu li {
+  margin: 15px 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s ease-in-out;
+}
+
+.menu li a:hover {
+  color: #ff6b6b;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 36px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.menu-toggle .line {
+  height: 4px;
+  background: black;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.menu-toggle.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.festival-content img {
+  width: 966px;
+  height: 200.02px;
+  top: 3677px;
+  left: 243px;
+  gap: 0px;
+  opacity: 0px;
+}
+
+.title {
+  animation: flow4 1s ease-in-out both;
+}
+
+@keyframes flow4 {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.flower {
+  animation: flow3 5s linear infinite;
+}
+
+@keyframes flow3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cat {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+#place:hover {
+  background-color: #ff630a;
+  color: white;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
