@@ -1,0 +1,20 @@
+// Responsive
+@media screen and (max-width: 768px) {
+    .menu-burger-container {
+      top: 15px;
+    }
+  
+    .menu li a {
+      font-size: 32px;
+    }
+  
+    .swiper-slide {
+      height: 200px;
+      width: 200px;
+    }
+  
+    .site-footer p {
+      font-size: 12px;
+    }
+  }
+  

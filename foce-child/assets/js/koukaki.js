@@ -27,6 +27,15 @@ jQuery(document).ready(function ($) {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  var scene = document.querySelector('.banner');
+  var parallaxInstance = new Parallax(scene, {
+    scalarX: 0.1,
+    scalarY: 0.1
+  });
+});
+
+
 //jQuery(window).scroll( function(){
 jQuery(window).on("scroll", function ($) {
 
@@ -99,6 +108,6 @@ menuLinks.forEach((link) => {
   });
 });
 
-
-
-
+var parallaxInstance = new Parallax(document.querySelectorAll('.parallax'), {
+  relativeInput: true,
+});

@@ -1,0 +1,74 @@
+// Header
+.menu-burger-container {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  
+  .menu-burger-container.active {
+    background-color: #FFF5E9;
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    text-align: center;
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .menu li {
+    margin: 15px 0;
+  }
+  
+  .menu li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 64px;
+  }
+  
+  .menu li a:hover {
+    -webkit-text-stroke: 2px #FF5C00;
+  }
+  
+  .menu-toggle {
+    position: absolute;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 36px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .site-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+  
+  .menu-toggle .line {
+    height: 4px;
+    background: black;
+    transition: transform
+  

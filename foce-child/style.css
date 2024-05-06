@@ -8,12 +8,12 @@
  Version: 0.1
  */
 
- h2 {
+h2 {
   background-color: transparent;
 }
 
-.fade-in{
-  display:none;
+.fade-in {
+  display: none;
   opacity: 0;
   animation: fadeInAnimation 1s ease forwards;
 }
@@ -97,27 +97,25 @@
   animation: moveClouds 5s linear infinite;
 }
 
-.cloud img{
-  --distance:0;
+.cloud img {
+  --distance: 0;
   filter: blur(12px);
-  position:absolute;
+  position: absolute;
   transform: translateX(var(--distance));
   top: 8%;
   right: 2%;
 }
-
-.bigcloud{}
 
 .littlecloud {
   margin-right: 30%;
   margin-top: 16%;
 }
 
-.swiper{
+.swiper {
   max-width: 900px;
 }
 
-.swiper-slide{
+.swiper-slide {
   height: 300px;
   width: 300px;
   margin: 10px;
@@ -134,17 +132,31 @@
 }
 
 .banner {
-  position: relative;
-  background-image: unset;
+  perspective: 1px;
 }
 
 .banner video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  transform: translateX(-50%) translateY(-50%) translateZ(-1px) scale(2);
+}
+
+
+
+
+.banner::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  transform: translateZ(-1px) scale(2);
 }
 
 .banner .logo {
@@ -207,9 +219,22 @@
 
 /*menu*/
 
+.main-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.menu-burger-container.fade-in {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
 .menu-burger-container {
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -225,8 +250,11 @@
 }
 
 .menu-burger-container.active {
+  background-color: #FFF5E9;
+  display: flex;
   visibility: visible;
   opacity: 1;
+  text-align: center;
 }
 
 .menu {
@@ -245,25 +273,31 @@
 }
 
 .menu li a {
-  color: white;
+  color: #000;
   text-decoration: none;
-  font-size: 24px;
-  transition: color 0.3s ease-in-out;
+  font-size: 64px;
 }
 
 .menu li a:hover {
-  color: #ff6b6b;
+  -webkit-text-stroke: 2px #FF5C00;
 }
 
 .menu-toggle {
+  position: absolute;
+  right: 100px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 36px;
   height: 30px;
   cursor: pointer;
-  position: relative;
-  z-index: 1;
+}
+
+.site-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
 }
 
 .menu-toggle .line {
@@ -273,7 +307,7 @@
 }
 
 .menu-toggle.active .line:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(4px, 4px);
 }
 
 .menu-toggle.active .line:nth-child(2) {
@@ -282,6 +316,98 @@
 
 .menu-toggle.active .line:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-chatnoir {
+  background-image: url('./assets/images/menu/cat-noir.png');
+  background-size: cover;
+  width: 155px;
+  height: 148px;
+  position: absolute;
+  top: 360px;
+  right: 300px;
+}
+
+.menu-chatbleu {
+  background-image: url('./assets/images/menu/cat.png');
+  background-size: cover;
+  width: 135px;
+  height: 128px;
+  position: absolute;
+  top: 120px;
+  left: 380px;
+}
+
+.menu-Orchid {
+  background-image: url('./assets/images/menu/Orchid.png');
+  background-size: cover;
+  width: 114px;
+  height: 169px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+.menu-fleurrose {
+  background-image: url('./assets/images/menu/fleur.png');
+  background-size: cover;
+  width: 44px;
+  height: 75px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.menu-chatoranger {
+  background-image: url('./assets/images/menu/cat-oranger.png');
+  background-size: cover;
+  width: 107px;
+  height: 97px;
+  position: absolute;
+  bottom: 200px;
+  left: 200px;
+}
+
+.menu-hibiscus {
+  background-image: url('./assets/images/menu/Hibiscus.png');
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+}
+
+.menu-sunflower {
+  background-image: url('./assets/images/menu/Sunflower.png');
+  background-size: cover;
+  width: 216px;
+  height: 216px;
+  position: absolute;
+  top: 100px;
+  right: 300px;
+}
+
+.menu-texture {
+  background-image: url('./assets/images/menu/texture.png');
+  background-size: cover;
+  width: 71px;
+  height: 71px;
+  position: absolute;
+  top: 360px;
+  left: 340px;
+}
+
+.menu-logo {
+  background-image: url('./assets/images/menu/menu-logo.png');
+  background-size: cover;
+  width: 204px;
+  height: 136px;
+}
+
+.menu-studioname {
+  position: absolute;
+  bottom: 100px;
 }
 
 .festival-content img {
@@ -341,4 +467,8 @@
   background-color: #ff630a;
   color: white;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.hide {
+  display: none;
 }

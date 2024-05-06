@@ -23,13 +23,13 @@ function koukaki_enqueue_scripts() {
         '11.0.0'
     );
 
-   /* // Enqueue custom CSS
+    // Enqueue custom CSS
     wp_enqueue_style(
         'custom-css',
         get_stylesheet_directory_uri() . '/assets/css/style.css',
         array( 'child-style' ),
         '1.0.0'
-    );*/
+    );
 
     // Enqueue jQuery library
     wp_enqueue_script('jquery');

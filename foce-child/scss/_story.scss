@@ -1,0 +1,153 @@
+// Story
+.story__article {
+    margin: auto;
+  
+    &::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-image: url("../images/sunflower.png");
+      background-size: cover;
+      animation: rotation 10s infinite linear;
+    }
+  }
+  
+  .title span {
+    display: inline-block;
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  .title span:nth-last-of-type(1) {
+    animation-delay: 1s;
+  }
+  
+  .title span:nth-last-of-type(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .title span:nth-last-of-type(3) {
+    animation-delay: 0.75s;
+  }
+  
+  .story #place {
+    display: flex;
+    background-image: url("../images/place_bg.png");
+    width: 100%;
+    min-height: 699px;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .story #place::before,
+  .story #place::after {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: 1;
+    animation: moveClouds 5s linear infinite;
+  }
+  
+  .cloud img {
+    --distance: 0;
+    filter: blur(12px);
+    position: absolute;
+    transform: translateX(var(--distance));
+    top: 8%;
+    right: 2%;
+  }
+  
+  .bigcloud {}
+  
+  .littlecloud {
+    margin-right: 30%;
+    margin-top: 16%;
+  }
+  
+  .swiper {
+    max-width: 900px;
+  }
+  
+  .swiper-slide {
+    height: 300px;
+    width: 300px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 30px;
+    flex-direction: column;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    display: block;
+  }
+  
+  .banner {
+    position: relative;
+    background-image: unset;
+  }
+  
+  .banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .banner .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
+    z-index: 1;
+  }
+  
+  #studio h2::before,
+  #studio h2::after,
+  .site-footer::before,
+  .site-footer::after,
+  #story h2::after {
+    position: absolute;
+    animation: rotate 10s linear infinite;
+  }
+  
+  #studio h2::before {
+    content: url("../images/random\_flower.png");
+    left: -1em;
+    top: 0;
+  }
+  
+  #studio h2::after {
+    content: url("../images/flower.png");
+    right: 1em;
+    top: 1.2em;
+  }
+  
+  .site-footer::before {
+    content: url("../images/Sunflower.png");
+    left: 4em;
+    top: 0em;
+  }
+  
+  .site-footer::after {
+    content: url("../images/orchid.png");
+    right: -4em;
+    bottom: 7.8em;
+  }
+  
+  #story h2::after {
+    content: url("../images/Sunflower.png");
+    left: 0.7em;
+    top: 6em;
+  }
+  

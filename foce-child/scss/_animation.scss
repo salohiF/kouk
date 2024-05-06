@@ -1,0 +1,29 @@
+// Animations
+@keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+      transform: translateY(10%);
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes rotation {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
